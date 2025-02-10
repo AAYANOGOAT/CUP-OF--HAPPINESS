@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: rgba(188, 150, 103, 0.5);
+  border-radius: 50%;
+  animation: rise 10s linear infinite, changeColor 5s linear infinite;
+}
+
+.bubble:nth-child(1) {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-duration: 12s, 6s;
+  animation-delay: 2s, 0s;
+}
+
+.bubble:nth-child(2) {
+  left: 20%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 8s, 4s;
+  animation-delay: 4s, 0s;
+}
+
+.bubble:nth-child(3) {
+  left: 30%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 6s, 3s;
+  animation-delay: 6s, 0s;
+}
+
+.bubble:nth-child(4) {
+  left: 40%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 14s, 7s;
+  animation-delay: 1s, 0s;
+}
+
+.bubble:nth-child(5) {
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 10s, 5s;
+  animation-delay: 3s, 0s;
+}
+
+.bubble:nth-child(6) {
+  left: 60%;
+  width: 70px;
+  height: 70px;
+  animation-duration: 12s, 6s;
+  animation-delay: 5s, 0s;
+}
+
+.bubble:nth-child(7) {
+  left: 70%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 6s, 3s;
+  animation-delay: 7s, 0s;
+}
+
+.bubble:nth-child(8) {
+  left: 80%;
+  width: 90px;
+  height: 90px;
+  animation-duration: 16s, 8s;
+  animation-delay: 2s, 0s;
+}
+
+.bubble:nth-child(9) {
+  left: 90%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 8s, 4s;
+  animation-delay: 4s, 0s;
+}
+
+.bubble:nth-child(10) {
+  left: 100%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 10s, 5s;
+  animation-delay: 6s, 0s;
+}
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  100% {
+    bottom: 100vh;
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes changeColor {
+  0%, 100% {
+    background: rgba(188, 150, 103, 0.5);
+  }
+  50% {
+    background: rgba(255, 225, 168, 0.5);
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 50px #bc9667;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.wrapper:hover {
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease-in-out;
+}
+
+.wrapper.active .form-wrapper.sign-in {
+  transform: translateY(-450px);
+}
+
+.wrapper .form-wrapper.sign-up {
+  position: absolute;
+  top: 450px;
+  left: 0;
+}
+
+.wrapper.active .form-wrapper.sign-up {
+  transform: translateY(-450px);
+}
+
+h2 {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.input-group {
+  position: relative;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input-group input {
+  width: 320px;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+  top: -5px;
+}
+
+.remember {
+  margin: -5px 0 15px 5px;
+}
+
+.remember label {
+  color: #fff;
+  font-size: 14px;
+}
+
+.remember label input {
+  accent-color: #bc9667;
+}
+
+button {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(45deg, #bc9667, #ffe1a8);
+  box-shadow: 0 0 10px #bc9667;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: background 0.5s, transform 0.5s;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ffe1a8, #bc9667);
+  transform: scale(1.05);
+}
+
+.signUp-link {
+  font-size: 14px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.signUp-link p {
+  color: #fff;
+}
+
+.signUp-link p a {
+  color: #bc9667;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signUp-link p a:hover {
+  text-decoration: underline;
+}
