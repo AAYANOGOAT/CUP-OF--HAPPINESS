@@ -20,3 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
         bubble.style.animationDuration = `${duration}s`;
     });
 });
+function vide(){}
